@@ -2,7 +2,14 @@ import React from 'react';
 
 import './App.css';
 import { Navbar } from './components';
-import { AboutUs, Chef, Header, Intro, SpecialMenu } from './container';
+import {
+  AboutUs,
+  Chef,
+  Header,
+  Intro,
+  Laurels,
+  SpecialMenu,
+} from './container';
 
 const App = () => {
   return (
@@ -13,6 +20,7 @@ const App = () => {
       <SpecialMenu />
       <Chef />
       <Intro />
+      <Laurels />
     </div>
   );
 };
