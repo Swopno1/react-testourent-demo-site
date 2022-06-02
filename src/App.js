@@ -5,6 +5,7 @@ import { Navbar } from './components';
 import {
   AboutUs,
   Chef,
+  Gallery,
   Header,
   Intro,
   Laurels,
@@ -21,6 +22,7 @@ const App = () => {
       <Chef />
       <Intro />
       <Laurels />
+      <Gallery />
     </div>
   );
 };
