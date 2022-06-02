@@ -54,8 +54,8 @@
 
 .custom__button {
   background-color: var(--color-crimson);
-  color: var(--color-black);
-  font-family: var(--font-base);
+  color: var(--color-dark);
+  font-family: var(--font-primary);
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 28px;
@@ -68,7 +68,7 @@
 }
 
 .p__cormorant {
-  font-family: var(--font-base);
+  font-family: var(--font-primary);
   color: var(--color-white);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -79,7 +79,7 @@
 }
 
 .p__opensans {
-  font-family: var(--font-alt);
+  font-family: var(--font-secondary);
   color: var(--color-white);
   font-weight: 400;
   letter-spacing: 0.04em;
@@ -89,8 +89,8 @@
 }
 
 .headtext__cormorant {
-  font-family: var(--font-base);
-  color: var(--color-golden);
+  font-family: var(--font-primary);
+  color: var(--color-primary);
   font-size: 64px;
   line-height: 83.2px;
   letter-spacing: 0.04em;

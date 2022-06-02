@@ -1,20 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import {
   BsArrowLeftShort,
   BsArrowRightShort,
   BsInstagram,
 } from 'react-icons/bs';
 import { SubHeading } from '../../components';
-import { images } from '../../constants';
+import { data } from '../../constants';
 
 import './Gallery.css';
-
-const galleryImages = [
-  images.gallery01,
-  images.gallery02,
-  images.gallery03,
-  images.gallery04,
-];
 
 const Gallery = () => {
   const scrollRef = useRef(null);
@@ -45,7 +38,7 @@ const Gallery = () => {
 
       <div className='app__gallery-images'>
         <div className='app__gallery-images_container' ref={scrollRef}>
-          {galleryImages.map((image, index) => (
+          {data.gallery.map((image, index) => (
             <div
               className='app__gallery-images_card flex__center'
               key={`gallery_image-${index + 1}`}

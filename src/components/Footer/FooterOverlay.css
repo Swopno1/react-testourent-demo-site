@@ -9,7 +9,7 @@
 
 .app__footerOverlay-black {
   height: 25%;
-  background: var(--color-black);
+  background: var(--color-dark);
 }
 
 .app__footerOverlay-img {

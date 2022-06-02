@@ -79,4 +79,17 @@ const awards = [
   },
 ];
 
-export default { wines, cocktails, awards };
+const gallery = [
+  images.gallery01,
+  images.gallery02,
+  images.gallery03,
+  images.gallery04,
+  images.gallery05,
+  images.gallery06,
+  images.gallery07,
+  images.gallery08,
+  images.gallery09,
+  images.gallery10,
+];
+
+export default { wines, cocktails, awards, gallery };

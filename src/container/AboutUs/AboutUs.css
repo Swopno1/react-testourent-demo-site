@@ -47,7 +47,7 @@
 .app__aboutus-content_history p,
 .app__aboutus-content_about p {
   margin: 2rem 0;
-  color: var(--color-grey);
+  color: var(--color-light-gray);
 }
 
 @media screen and (max-width: 2000px) {

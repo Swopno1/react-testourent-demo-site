@@ -23,7 +23,7 @@
 .app__menuItem-dash {
   width: 90px;
   height: 1px;
-  background: var(--color-golden);
+  background: var(--color-primary);
   margin: 0 1rem;
 }
 
