@@ -6,6 +6,7 @@ import {
   AboutUs,
   Chef,
   FindUs,
+  Footer,
   Gallery,
   Header,
   Intro,
@@ -25,6 +26,7 @@ const App = () => {
       <Laurels />
       <Gallery />
       <FindUs />
+      <Footer />
     </div>
   );
 };
