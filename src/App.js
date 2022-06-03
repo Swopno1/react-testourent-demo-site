@@ -1,31 +1,20 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import './App.css';
 import { Navbar } from './components';
-import {
-  AboutUs,
-  Chef,
-  FindUs,
-  Footer,
-  Gallery,
-  Header,
-  Intro,
-  Laurels,
-  SpecialMenu,
-} from './container';
+import { Footer } from './container';
+import { Home, Login, PageNotFound } from './page';
 
 const App = () => {
   return (
     <div>
       <Navbar />
-      <Header />
-      <AboutUs />
-      <SpecialMenu />
-      <Chef />
-      <Intro />
-      <Laurels />
-      <Gallery />
-      <FindUs />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
       <Footer />
     </div>
   );
