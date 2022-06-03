@@ -20,7 +20,7 @@ const Laurels = () => {
   return (
     <div className='app__bg app__wrapper section__padding' id='award'>
       <div className='app__wrapper_info'>
-        <SubHeading title='Awards & recognition' />
+        <SubHeading>Awards & recognition</SubHeading>
         <h1 className='headtext__cormorant'>Our Laurels</h1>
 
         <div className='app__laurels_awards'>

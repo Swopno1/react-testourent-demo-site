@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 import { images } from '../../constants';
 import './Navbar.css';
@@ -11,34 +12,36 @@ const Navbar = () => {
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
-        <img src={images.gericht} alt='app logo' />
+        <Link to='/'>
+          <img src={images.gericht} alt='app logo' />
+        </Link>
       </div>
       <ul className='app__navbar-links'>
         <li className='p__opensans'>
-          <a href='#home'>Home</a>
+          <Link to='#home'>Home</Link>
         </li>
         <li className='p__opensans'>
-          <a href='#about'>About</a>
+          <Link to='#about'>About</Link>
         </li>
         <li className='p__opensans'>
-          <a href='#menu'>Menu</a>
+          <Link to='#menu'>Menu</Link>
         </li>
         <li className='p__opensans'>
-          <a href='#award'>Award</a>
+          <Link to='#award'>Award</Link>
         </li>
         <li className='p__opensans'>
-          <a href='#contact'>Contadt</a>
+          <Link to='#contact'>Contadt</Link>
         </li>
       </ul>
       <div className='app__navbar-login'>
-        <a href='/login' className='p__opensans'>
+        <Link to='/login' className='p__opensans'>
           {' '}
           Log In / Register
-        </a>
+        </Link>
         <div />
-        <a href='/' className='p__opensans'>
+        <Link to='/' className='p__opensans'>
           Book Table
-        </a>
+        </Link>
       </div>
       <div className='app__navbar-smallscreen'>
         <GiHamburgerMenu
@@ -57,19 +60,19 @@ const Navbar = () => {
 
             <ul className='app__navbar-smallscreen_links'>
               <li className='p__opensans'>
-                <a href='#home'>Home</a>
+                <Link to='#home'>Home</Link>
               </li>
               <li className='p__opensans'>
-                <a href='#about'>About</a>
+                <Link to='#about'>About</Link>
               </li>
               <li className='p__opensans'>
-                <a href='#menu'>Menu</a>
+                <Link to='#menu'>Menu</Link>
               </li>
               <li className='p__opensans'>
-                <a href='#award'>Award</a>
+                <Link to='#award'>Award</Link>
               </li>
               <li className='p__opensans'>
-                <a href='#contact'>Contadt</a>
+                <Link to='#contact'>Contadt</Link>
               </li>
             </ul>
           </div>

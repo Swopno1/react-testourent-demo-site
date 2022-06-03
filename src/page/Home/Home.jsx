@@ -1,5 +1,7 @@
 import React from 'react';
 
+// import { NewsLetter } from '../../components';
+
 import {
   AboutUs,
   Chef,
@@ -22,6 +24,7 @@ const Home = () => {
       <Laurels />
       <Gallery />
       <FindUs />
+      {/* <NewsLetter /> */}
     </>
   );
 };
