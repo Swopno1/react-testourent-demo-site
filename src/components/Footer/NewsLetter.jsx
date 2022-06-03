@@ -1,19 +1,25 @@
 import React from 'react';
-import Form from '../Form/Form';
+
+import './NewsLetter.css';
 
 const NewsLetter = () => {
-  const handleSubscribe = () => {};
+  const handleSubscribe = () => {
+    console.log('Subscribed!');
+  };
 
   return (
-    <Form
-      handleSubmit={handleSubscribe}
-      subHeading='Newsletter'
-      formTitle='Subscribe to Our Newsletter'
-      formSubTitle='And never miss latest Updates!'
-    >
-      <input type='email' placeholder='Enter your email address' />
-      <button className='custom__button'>Subscribe</button>
-    </Form>
+    <form className='app__newsletter' onSubmit={handleSubscribe}>
+      <div className='app__newsletter-heading'>
+        <h1 className='headtext__cormorant'>Subscribe to Our Newsletter</h1>
+        <p className='p__opensans'>And never miss latest Updates!</p>
+      </div>
+      <div className='app__newsletter-input flex__center'>
+        <input type='email' placeholder='Enter your email address' />
+        <button type='submit' className='custom__button'>
+          Subscribe
+        </button>
+      </div>
+    </form>
   );
 };
 

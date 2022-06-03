@@ -6,6 +6,7 @@ import FooterOverlay from './Footer/FooterOverlay';
 import NewsLetter from './Footer/NewsLetter';
 import Form from './Form/Form';
 import Input from './Form/Input';
+import Divider from './Divider/Divider';
 
 export {
   Heading,
@@ -16,4 +17,5 @@ export {
   NewsLetter,
   Form,
   Input,
+  Divider,
 };

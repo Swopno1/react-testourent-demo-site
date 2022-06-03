@@ -1,20 +1,23 @@
 import React from 'react';
 
-import SubHeading from '../SubHeading/SubHeading';
 import './Form.css';
 
 const Form = ({
-  subHeading,
   handleSubmit,
   formTitle,
   formSubTitle,
   children,
+  style,
+  className,
+  inputDirection,
 }) => {
   return (
-    <form className='app__form' onSubmit={handleSubmit}>
+    <form
+      className={`app__form ${className}`}
+      style={style}
+      onSubmit={handleSubmit}
+    >
       <div className='app__form-heading'>
-        {subHeading && <SubHeading>{subHeading}</SubHeading>}
-
         {formTitle && <h1 className='headtext__cormorant'>{formTitle}</h1>}
 
         {formSubTitle && <p className='p__opensans'>{formSubTitle}</p>}
