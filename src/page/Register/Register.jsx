@@ -5,7 +5,7 @@ import {
   useSignInWithGoogle,
   useAuthState,
 } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { Error, Form, Loading, SubHeading } from '../../components';
 import auth from '../../firebase.init';
@@ -23,6 +23,8 @@ const Register = () => {
   const [aUser, aLoading, aError] = useAuthState(auth);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || '/';
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -72,7 +74,7 @@ const Register = () => {
   }
 
   if (user || gUser || aUser) {
-    navigate('/', { replace: true });
+    navigate(from, { replace: true });
   }
 
   return (

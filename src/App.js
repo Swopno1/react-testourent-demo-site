@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Error, Navbar } from './components';
 import { Footer } from './container';
-import { Home, Login, Register } from './page';
+import { BookTable, Home, Login, Register, RequireAuth } from './page';
 
 const App = () => {
   return (
@@ -14,6 +14,14 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route
+          path='/booknow'
+          element={
+            <RequireAuth>
+              <BookTable />
+            </RequireAuth>
+          }
+        />
         <Route
           path='*'
           element={

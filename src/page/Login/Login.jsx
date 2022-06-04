@@ -4,7 +4,7 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
 import { Error, Form, Loading, SubHeading } from '../../components';
@@ -21,6 +21,8 @@ const Login = () => {
   const [aUser, aLoading, aError] = useAuthState(auth);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || '/';
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -62,7 +64,7 @@ const Login = () => {
   }
 
   if (user || gUser || aUser) {
-    navigate('/', { replace: true });
+    navigate(from, { replace: true });
   }
 
   return (

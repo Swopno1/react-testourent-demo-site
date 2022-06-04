@@ -60,7 +60,7 @@ const Navbar = () => {
           </Link>
         )}
         <div />
-        <Link to='/' className='p__opensans'>
+        <Link to='/booknow' className='p__opensans'>
           Book Table
         </Link>
       </div>
