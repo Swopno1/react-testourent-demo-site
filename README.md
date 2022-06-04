@@ -1,8 +1,10 @@
 # Demo Restaurant Website
 
+Demo site link: [Gericht](https://fir-restaurant1-48bbb.web.app/)
+
 ## Used Package and plugins
 
 - React Js
-- Venila CSS
+- Vanila CSS
 - Firebase for authentication
 - Firebase hosting
