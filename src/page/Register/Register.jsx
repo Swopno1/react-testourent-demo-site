@@ -1,11 +1,39 @@
-import React from 'react';
-import { Form, SubHeading } from '../../components';
+import React, { useState } from 'react';
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+  useSignInWithGoogle,
+} from 'react-firebase-hooks/auth';
 
+import { Form, SubHeading } from '../../components';
+import auth from '../../firebase.init';
 import './Register.css';
 
 const Register = () => {
-  const handleRegister = () => {};
-  const handleGoogleLogIn = () => {};
+  const [userName, setUserName] = useState();
+  const [userEmail, setUserEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    if (userName && userEmail && password) {
+      await createUserWithEmailAndPassword(userEmail, password);
+      await updateProfile({ displayName: userName });
+    } else {
+      return alert('All field required!');
+    }
+  };
+
+  const handleGoogleLogIn = (e) => {
+    e.preventDefault();
+    signInWithGoogle();
+  };
 
   return (
     <div className='app__login section__padding'>
@@ -18,10 +46,26 @@ const Register = () => {
           formTitle='Register'
           formSubTitle='Please register with name, email and password!'
           className='app__login-form'
+          autoComplete='false'
         >
-          <input type='text' placeholder='Enter your name' />
-          <input type='email' placeholder='Enter your email' />
-          <input type='password' placeholder='Enter your password' />
+          <input
+            type='text'
+            placeholder='Enter your name'
+            autoComplete='name'
+            onBlur={(e) => setUserName(e.target.value)}
+          />
+          <input
+            type='email'
+            placeholder='Enter your email'
+            autoComplete='email'
+            onBlur={(e) => setUserEmail(e.target.value)}
+          />
+          <input
+            type='password'
+            placeholder='Enter your password'
+            autoComplete='new-password'
+            onBlur={(e) => setPassword(e.target.value)}
+          />
           <button className='custom__button'>Register</button>
         </Form>
       </div>

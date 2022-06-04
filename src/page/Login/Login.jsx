@@ -20,8 +20,16 @@ const Login = () => {
           formSubTitle='Enter your email and password'
           className='app__login-form'
         >
-          <input type='email' placeholder='Enter your email' />
-          <input type='password' placeholder='Enter your password' />
+          <input
+            type='email'
+            placeholder='Enter your email'
+            autoComplete='username'
+          />
+          <input
+            type='password'
+            placeholder='Enter your password'
+            autoComplete='current-password'
+          />
           <button className='custom__button'>Log In</button>
         </Form>
       </div>
