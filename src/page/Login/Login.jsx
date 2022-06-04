@@ -3,9 +3,10 @@ import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 
-import { Form, Loading, SubHeading } from '../../components';
+import { Error, Form, Loading, SubHeading } from '../../components';
 import auth from '../../firebase.init';
 import './Login.css';
 
@@ -16,6 +17,8 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+  const navigate = useNavigate();
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -32,20 +35,17 @@ const Login = () => {
 
   if (error || gError) {
     return (
-      <div>
-        <p>Error: </p>
-      </div>
+      <>
+        {error && <Error>{error}</Error>}
+        {gError && <Error>{gError}</Error>}
+      </>
     );
   }
   if (loading || gLoading) {
     return <Loading />;
   }
   if (user || gUser) {
-    return (
-      <div>
-        <p>Registered User: </p>
-      </div>
-    );
+    navigate('/', { replace: true });
   }
 
   return (

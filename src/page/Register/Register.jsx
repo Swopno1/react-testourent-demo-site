@@ -4,8 +4,9 @@ import {
   useUpdateProfile,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
-import { Form, Loading, SubHeading } from '../../components';
+import { Error, Form, Loading, SubHeading } from '../../components';
 import auth from '../../firebase.init';
 import './Register.css';
 
@@ -18,6 +19,8 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
+
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -37,20 +40,18 @@ const Register = () => {
 
   if (error || gError || updatingError) {
     return (
-      <div>
-        <p>Error: </p>
-      </div>
+      <>
+        {error && <Error>{error}</Error>}
+        {gError && <Error>{gError}</Error>}
+        {updatingError && <Error>{updatingError}</Error>}
+      </>
     );
   }
   if (loading || gLoading || updating) {
     return <Loading />;
   }
   if (user || gUser) {
-    return (
-      <div>
-        <p>Registered User: {user.email}</p>
-      </div>
-    );
+    navigate('/', { replace: true });
   }
 
   return (

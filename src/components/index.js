@@ -8,6 +8,7 @@ import Form from './Form/Form';
 import Input from './Form/Input';
 import Divider from './Divider/Divider';
 import Loading from './Loading/Loading';
+import Error from './Error/Error';
 
 export {
   Heading,
@@ -20,4 +21,5 @@ export {
   Input,
   Divider,
   Loading,
+  Error,
 };
