@@ -10,16 +10,15 @@
   padding-top: 0;
 }
 
-.app__login-form {
-  flex-direction: column;
-}
-
 @media screen and (max-width: 1150px) {
 }
 
 @media screen and (max-width: 650px) {
   .app__login {
     padding: 0 0 2rem 0;
+  }
+  .app__login-form {
+    max-width: 80%;
   }
 }
 

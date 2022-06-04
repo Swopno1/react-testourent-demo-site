@@ -1,28 +1,28 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-
 import { Form, SubHeading } from '../../components';
-import './Login.css';
 
-const Login = () => {
-  const handleLogIn = () => {};
+import './Register.css';
+
+const Register = () => {
+  const handleRegister = () => {};
   const handleGoogleLogIn = () => {};
 
   return (
     <div className='app__login section__padding'>
       <div style={{ marginTop: '2rem' }}>
-        <SubHeading>Log in</SubHeading>
+        <SubHeading>New User</SubHeading>
       </div>
-      <div className=''>
+      <div>
         <Form
-          handleSubmit={handleLogIn}
-          formTitle='Please log in'
-          formSubTitle='Enter your email and password'
+          handleSubmit={handleRegister}
+          formTitle='Register'
+          formSubTitle='Please register with name, email and password!'
           className='app__login-form'
         >
+          <input type='text' placeholder='Enter your name' />
           <input type='email' placeholder='Enter your email' />
           <input type='password' placeholder='Enter your password' />
-          <button className='custom__button'>Log In</button>
+          <button className='custom__button'>Register</button>
         </Form>
       </div>
       <div className='p__opensans' style={{ padding: '1rem 0' }}>
@@ -37,4 +37,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

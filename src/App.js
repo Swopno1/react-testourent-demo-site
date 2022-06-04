@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Navbar } from './components';
 import { Footer } from './container';
-import { Home, Login, PageNotFound } from './page';
+import { Home, Login, PageNotFound, Register } from './page';
 
 const App = () => {
   return (
@@ -13,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />
