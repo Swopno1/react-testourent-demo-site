@@ -7,6 +7,7 @@ import NewsLetter from './Footer/NewsLetter';
 import Form from './Form/Form';
 import Input from './Form/Input';
 import Divider from './Divider/Divider';
+import Loading from './Loading/Loading';
 
 export {
   Heading,
@@ -18,4 +19,5 @@ export {
   Form,
   Input,
   Divider,
+  Loading,
 };

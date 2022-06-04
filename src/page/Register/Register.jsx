@@ -5,7 +5,7 @@ import {
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
 
-import { Form, SubHeading } from '../../components';
+import { Form, Loading, SubHeading } from '../../components';
 import auth from '../../firebase.init';
 import './Register.css';
 
@@ -34,6 +34,24 @@ const Register = () => {
     e.preventDefault();
     signInWithGoogle();
   };
+
+  if (error || gError || updatingError) {
+    return (
+      <div>
+        <p>Error: </p>
+      </div>
+    );
+  }
+  if (loading || gLoading || updating) {
+    return <Loading />;
+  }
+  if (user || gUser) {
+    return (
+      <div>
+        <p>Registered User: {user.email}</p>
+      </div>
+    );
+  }
 
   return (
     <div className='app__login section__padding'>
