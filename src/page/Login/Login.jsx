@@ -38,9 +38,21 @@ const Login = () => {
   if (error || gError || aError) {
     return (
       <>
-        {error && <Error>{error}</Error>}
-        {gError && <Error>{gError}</Error>}
-        {aError && <Error>{aError}</Error>}
+        {error && (
+          <Error subHeading='Error' errorCode='401'>
+            {error.message}
+          </Error>
+        )}
+        {gError && (
+          <Error subHeading='Error' errorCode='401'>
+            {gError.message}
+          </Error>
+        )}
+        {aError && (
+          <Error subHeading='Error' errorCode='401'>
+            {aError.message}
+          </Error>
+        )}
       </>
     );
   }

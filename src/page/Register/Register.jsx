@@ -43,10 +43,26 @@ const Register = () => {
   if (error || gError || updatingError || aError) {
     return (
       <>
-        {error && <Error>{error}</Error>}
-        {gError && <Error>{gError}</Error>}
-        {updatingError && <Error>{updatingError}</Error>}
-        {aError && <Error>{aError}</Error>}
+        {error && (
+          <Error subHeading='Error' errorCode='409'>
+            {error.message}
+          </Error>
+        )}
+        {gError && (
+          <Error subHeading='Error' errorCode='409'>
+            {error.message}
+          </Error>
+        )}
+        {updatingError && (
+          <Error subHeading='Error' errorCode='409'>
+            {error.message}
+          </Error>
+        )}
+        {aError && (
+          <Error subHeading='Error' errorCode='409'>
+            {error.message}
+          </Error>
+        )}
       </>
     );
   }
