@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineRestaurantMenu } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 import { images } from '../../constants';
+import auth from '../../firebase.init';
 import './Navbar.css';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  const [aUser] = useAuthState(auth);
+
+  const handleSignOut = (e) => {
+    e.preventDefault();
+    signOut(auth);
+  };
 
   return (
     <nav className='app__navbar'>
@@ -34,10 +44,21 @@ const Navbar = () => {
         </li>
       </ul>
       <div className='app__navbar-login'>
-        <Link to='/login' className='p__opensans'>
-          {' '}
-          Log In / Register
-        </Link>
+        {aUser?.email ? (
+          <p
+            onClick={handleSignOut}
+            className='p__opensans'
+            style={{ paddingRight: '1rem', cursor: 'pointer' }}
+          >
+            {' '}
+            Signout
+          </p>
+        ) : (
+          <Link to='/login' className='p__opensans'>
+            {' '}
+            Log In / Register
+          </Link>
+        )}
         <div />
         <Link to='/' className='p__opensans'>
           Book Table

@@ -14,10 +14,6 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route
-          path='/loading'
-          element={<Error>asfsdk sdhf asdkf saklf </Error>}
-        />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+  useAuthState,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from 'react-firebase-hooks/auth';
@@ -17,6 +18,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [aUser, aLoading, aError] = useAuthState(auth);
 
   const navigate = useNavigate();
 
@@ -33,18 +35,21 @@ const Login = () => {
     signInWithGoogle();
   };
 
-  if (error || gError) {
+  if (error || gError || aError) {
     return (
       <>
         {error && <Error>{error}</Error>}
         {gError && <Error>{gError}</Error>}
+        {aError && <Error>{aError}</Error>}
       </>
     );
   }
-  if (loading || gLoading) {
+
+  if (loading || gLoading || aLoading) {
     return <Loading />;
   }
-  if (user || gUser) {
+
+  if (user || gUser || aUser) {
     navigate('/', { replace: true });
   }
 

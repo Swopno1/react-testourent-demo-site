@@ -3,6 +3,7 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
   useSignInWithGoogle,
+  useAuthState,
 } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
+  const [aUser, aLoading, aError] = useAuthState(auth);
 
   const navigate = useNavigate();
 
@@ -38,19 +40,22 @@ const Register = () => {
     signInWithGoogle();
   };
 
-  if (error || gError || updatingError) {
+  if (error || gError || updatingError || aError) {
     return (
       <>
         {error && <Error>{error}</Error>}
         {gError && <Error>{gError}</Error>}
         {updatingError && <Error>{updatingError}</Error>}
+        {aError && <Error>{aError}</Error>}
       </>
     );
   }
-  if (loading || gLoading || updating) {
+
+  if (loading || gLoading || updating || aLoading) {
     return <Loading />;
   }
-  if (user || gUser) {
+
+  if (user || gUser || aUser) {
     navigate('/', { replace: true });
   }
 
