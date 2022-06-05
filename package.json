@@ -1,11 +1,13 @@
 {
   "name": "gerich-restourant",
   "version": "0.1.0",
+  "author": "Md Amir Hossain",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "jsonwebtoken": "^8.5.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-firebase-hooks": "^5.0.3",

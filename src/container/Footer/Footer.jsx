@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className='app__footer section__padding'>
       <FooterOverlay />
-      <NewsLetter />
+      {/* <NewsLetter /> */}
 
       <div className='app__footer-links'>
         <div className='app__footer-links_contact'>

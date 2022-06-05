@@ -1,4 +1,5 @@
 import React from 'react';
+import { NewsLetter } from '../../components';
 
 // import { NewsLetter } from '../../components';
 
@@ -24,7 +25,9 @@ const Home = () => {
       <Laurels />
       <Gallery />
       <FindUs />
-      {/* <NewsLetter /> */}
+      <div className='app__footer section__padding'>
+        <NewsLetter />
+      </div>
     </>
   );
 };
